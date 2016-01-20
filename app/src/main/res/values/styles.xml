@@ -1,20 +1,60 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    !-- Windows Start -->
+
+    <style name="padding_horizontal">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="padding_vertical">
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="padding_all">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="secondary_window_without_padding">
+        <item name="android:background">@color/secondaryWindowBackground</item>
+    </style>
+
+    <style name="secondary_window_with_padding" parent="padding_all">
+        <item name="android:background">@color/secondaryWindowBackground</item>
+    </style>
+
+    <!-- Windows End -->
+
+    <!-- Text Start -->
+
+    <style name="title">
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="light_title" parent="title">
+        <item name="android:textColor">@color/light_text</item>
+    </style>
+
+    <style name="sub_title">
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="light_sub_title" parent="sub_title">
+        <item name="android:textColor">@color/light_text</item>
+    </style>
+
+    <style name="body" />
+
+    <style name="highlighted_body" parent="body">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Text End -->
 
 </resources>
