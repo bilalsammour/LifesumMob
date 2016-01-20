@@ -5,8 +5,6 @@ import android.content.Context;
 
 import com.lifesum.lifesummob.adapters.BaseListAdapter;
 
-import java.util.List;
-
 /**
  * The base loader for any loader that used to retrieve data list
  * that will shown in an adapter
@@ -17,7 +15,7 @@ import java.util.List;
  */
 public abstract class BaseAdapterLoader<TService, TReturn,
         TAdapter extends BaseListAdapter>
-        extends LoaderRequestManager<TService, List<TReturn>> {
+        extends LoaderRequestManager<TService, TReturn> {
 
     private TAdapter adapter;
     private boolean append;
@@ -36,15 +34,16 @@ public abstract class BaseAdapterLoader<TService, TReturn,
     }
 
     @Override
-    @SuppressWarnings("unchecked")
-    protected void onResponse(List<TReturn> response) {
+    protected void onResponse(TReturn response) {
         super.onResponse(response);
 
         if (!isAppend())
             adapter.resetItems();
 
-        adapter.addItems(response);
+        addItemsToAdapter(response);
     }
+
+    protected abstract void addItemsToAdapter(TReturn response);
 
     /**
      * Retrieve data and clear the old

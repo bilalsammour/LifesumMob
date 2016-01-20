@@ -30,6 +30,7 @@ public abstract class BaseListAdapter
 
     /**
      * Create an instance
+     *
      * @param activity the context as {@link Activity}
      */
     public BaseListAdapter(Activity activity) {
@@ -153,7 +154,6 @@ public abstract class BaseListAdapter
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         TModel item;
 
-        chooseBestItemsStates();
         int viewType = getItemViewType(position);
         RowType rowType = RowType.values()[viewType];
 
@@ -161,14 +161,6 @@ public abstract class BaseListAdapter
             item = getList().get(position);
             onRegularBindViewHolder((VH) holder, position, item);
         }
-    }
-
-    private void chooseBestItemsStates() {
-        if (list == null)
-            setItemsStates(ItemsStates.LOADING);
-
-        else if (list.size() == 0)
-            setItemsStates(ItemsStates.EMPTY);
     }
 
     protected abstract void onRegularBindViewHolder(VH holder, int position, TModel item);
@@ -248,6 +240,21 @@ public abstract class BaseListAdapter
     }
 
     protected abstract void initItems();
+
+    /**
+     * Use this method after finishing the data callback with no data
+     * in order to use the correct state
+     */
+    public void refreshWithNoChanges() {
+        ItemsStates state = getItemsStates();
+
+        if (list == null || list.size() == 0)
+            setItemsStates(ItemsStates.EMPTY);
+        else
+            setItemsStates(state);
+
+        notifyDataSetChanged();
+    }
 
     /**
      * Get a specific item
