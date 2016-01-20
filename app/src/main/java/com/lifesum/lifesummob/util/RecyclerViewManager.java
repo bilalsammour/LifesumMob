@@ -9,14 +9,14 @@ import android.support.v7.widget.RecyclerView;
 public class RecyclerViewManager {
 
     /**
-     * Set the properties to make an horizontal {@link RecyclerView}
+     * Set the properties to make an vertical {@link RecyclerView}
      *
      * @param recyclerView    the  recyclerView that should be operated
      * @param adapter         the adapter to set, or null to set no adapter.
      * @param hasFixedSize    true if adapter changes cannot affect the size of the RecyclerView
      * @param nestedScrolling used if the parent is scrollable
      */
-    public static void setHorizontalRecyclerView(
+    public static void setVerticalRecyclerView(
             RecyclerView recyclerView, RecyclerView.Adapter<?> adapter,
             boolean hasFixedSize, boolean nestedScrolling) {
 
