@@ -1,5 +1,6 @@
 package com.lifesum.lifesummob.adapters;
 
+import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -21,10 +22,19 @@ public abstract class BaseListAdapter
         <VH extends BaseListAdapter.ItemBaseViewHolder, TModel>
         extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    protected Activity activity;
     private List<TModel> list;
     private ItemsStates itemsStates = ItemsStates.LOADING;
     private boolean isLoadingMore;
     private OnItemClickListener onItemClickListener;
+
+    /**
+     * Create an instance
+     * @param activity the context as {@link Activity}
+     */
+    public BaseListAdapter(Activity activity) {
+        this.activity = activity;
+    }
 
     /**
      * Returns the total number of items in the data set hold by the adapter.
@@ -345,7 +355,7 @@ public abstract class BaseListAdapter
      *
      * @see {@link #setOnItemClickListener(OnItemClickListener)}
      */
-    public class ItemBaseViewHolder extends RecyclerView.ViewHolder {
+    protected class ItemBaseViewHolder extends RecyclerView.ViewHolder {
 
         public ItemBaseViewHolder(View itemView) {
             super(itemView);
