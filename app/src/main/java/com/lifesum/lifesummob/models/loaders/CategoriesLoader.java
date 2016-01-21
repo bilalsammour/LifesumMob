@@ -3,7 +3,7 @@ package com.lifesum.lifesummob.models.loaders;
 import android.app.Activity;
 import android.content.Context;
 
-import com.lifesum.lifesummob.adapters.CategoriesAdapter;
+import com.lifesum.lifesummob.adapters.FoodAdapter;
 import com.lifesum.lifesummob.models.services.CategoriesService;
 import com.lifesum.lifesummob.models.thin.CategoriesObjectModel;
 
@@ -11,7 +11,7 @@ import com.lifesum.lifesummob.models.thin.CategoriesObjectModel;
  * The loader for the categories
  */
 public class CategoriesLoader extends BaseAdapterLoader
-        <CategoriesService, CategoriesObjectModel, CategoriesAdapter> {
+        <CategoriesService, CategoriesObjectModel, FoodAdapter> {
 
     private String query = "";
 
@@ -32,13 +32,13 @@ public class CategoriesLoader extends BaseAdapterLoader
      */
     @Override
     protected void initAdapter(Activity activity) {
-        setAdapter(new CategoriesAdapter(activity));
+        setAdapter(new FoodAdapter(activity));
     }
 
     @Override
     protected void addItemsToAdapter(CategoriesObjectModel response) {
-        if (response != null && response.getCategories() != null)
-            getAdapter().addItems(response.getCategories());
+        if (response != null && response.getFood() != null)
+            getAdapter().addItems(response.getFood());
         else
             getAdapter().refreshWithNoChanges();
     }

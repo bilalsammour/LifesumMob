@@ -10,10 +10,10 @@ import java.util.List;
  */
 public class CategoriesObjectModel implements Serializable {
 
-    @SerializedName("serving_categories")
-    private List<CategoryModel> categories;
+    @SerializedName("food")
+    private List<FoodModel> food;
 
-    public List<CategoryModel> getCategories() {
-        return categories;
+    public List<FoodModel> getFood() {
+        return food;
     }
 }

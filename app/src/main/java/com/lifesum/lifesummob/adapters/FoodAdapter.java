@@ -7,35 +7,34 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lifesum.lifesummob.R;
-import com.lifesum.lifesummob.models.thin.CategoryModel;
+import com.lifesum.lifesummob.models.thin.FoodModel;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 
 /**
  * Categories adapter
  */
-public class CategoriesAdapter extends BaseListAdapter
-        <CategoriesAdapter.CategoriesViewHolder, CategoryModel> {
+public class FoodAdapter extends BaseListAdapter
+        <FoodAdapter.CategoriesViewHolder, FoodModel> {
 
     /**
      * Create an instance
      *
      * @param activity the context as {@link Activity}
      */
-    public CategoriesAdapter(Activity activity) {
+    public FoodAdapter(Activity activity) {
         super(activity);
     }
 
     @Override
     protected void initItems() {
-        setList(new ArrayList<CategoryModel>());
+        setList(new ArrayList<FoodModel>());
     }
 
     @Override
     protected CategoriesViewHolder onCreateRegularViewHolder
             (ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(activity).inflate(R.layout.item_category,
+        View view = LayoutInflater.from(activity).inflate(R.layout.item_food,
                 parent, false);
 
         return new CategoriesViewHolder(view);
@@ -43,11 +42,9 @@ public class CategoriesAdapter extends BaseListAdapter
 
     @Override
     protected void onRegularBindViewHolder
-            (CategoriesViewHolder holder, int position, CategoryModel item) {
-        holder.getTitle().setText(item.getName());
-
-        NumberFormat numberFormat = NumberFormat.getNumberInstance();
-        holder.getDescription().setText(numberFormat.format(item.getSource()));
+            (CategoriesViewHolder holder, int position, FoodModel item) {
+        holder.getTitle().setText(item.getTitle());
+        holder.getDescription().setText(item.getCategory());
     }
 
     protected class CategoriesViewHolder extends BaseListAdapter.ItemBaseViewHolder {
