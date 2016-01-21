@@ -50,13 +50,6 @@ public class MainActivityFragment extends BaseFragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-
-        loader.retrieve();
-    }
-
-    @Override
     protected void initViews(View rootView) {
         RecyclerView list = (RecyclerView)
                 rootView.findViewById(R.id.list);
