@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lifesum.lifesummob.R;
+import com.lifesum.lifesummob.activities.DetailActivity;
 import com.lifesum.lifesummob.models.thin.FoodModel;
 
 import java.util.ArrayList;
@@ -29,6 +30,14 @@ public class FoodAdapter extends BaseListAdapter
     @Override
     protected void initItems() {
         setList(new ArrayList<FoodModel>());
+    }
+
+    @Override
+    protected void onItemClick(int position) {
+        super.onItemClick(position);
+
+        FoodModel item = getItem(position);
+        activity.startActivity(DetailActivity.getIntentInstance(activity, item));
     }
 
     @Override

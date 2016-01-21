@@ -2,7 +2,6 @@ package com.lifesum.lifesummob.fragments;
 
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,8 +62,6 @@ public class MainActivityFragment extends BaseFragment {
      * @param query to be searched
      */
     public void search(String query) {
-        Log.i("search", query);
-
         loader.setQuery(query);
         loader.retrieve();
     }

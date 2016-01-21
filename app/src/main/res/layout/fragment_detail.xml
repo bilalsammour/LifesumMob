@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/padding_all"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.DetailActivityFragment">
+
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/sub_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_one_unit" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_one_unit">
+
+        <TextView
+            style="@style/highlighted_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/fat" />
+
+        <TextView
+            android:id="@+id/fat"
+            style="@style/body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="@dimen/margin_one_unit"
+            android:layout_marginStart="@dimen/margin_one_unit"
+            android:layout_row="0" />
+
+        <TextView
+            style="@style/highlighted_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="@string/calories" />
+
+        <TextView
+            android:id="@+id/calories"
+            style="@style/body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="@dimen/margin_one_unit"
+            android:layout_marginStart="@dimen/margin_one_unit"
+            android:layout_row="1" />
+    </GridLayout>
+
+</LinearLayout>

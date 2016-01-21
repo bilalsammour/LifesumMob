@@ -19,9 +19,6 @@ public class FoodModel implements Serializable {
     @SerializedName("category")
     private String category;
 
-    @SerializedName("categoryid")
-    private long categoryid;
-
     @SerializedName("fat")
     private double fat;
 
@@ -38,10 +35,6 @@ public class FoodModel implements Serializable {
 
     public String getCategory() {
         return category;
-    }
-
-    public long getCategoryid() {
-        return categoryid;
     }
 
     public double getFat() {

@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">LifesumMob</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Lifesum Mob</string>
     <string name="no_items">No items to show</string>
     <string name="search_for">Search for</string>
+    <string name="fat">Fat</string>
+    <string name="calories">Calories</string>
 </resources>
