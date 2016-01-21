@@ -1,14 +1,13 @@
 package com.lifesum.lifesummob.activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.lifesum.lifesummob.R;
+import com.lifesum.lifesummob.fragments.MainActivityFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -25,12 +24,21 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        final MainActivityFragment fragment = (MainActivityFragment)
+                getSupportFragmentManager().findFragmentById(R.id.fragment);
+
+        SearchView search = (SearchView) findViewById(R.id.search);
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public boolean onQueryTextSubmit(String query) {
+                fragment.search(query);
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
             }
         });
     }
