@@ -11,7 +11,8 @@ import com.lifesum.lifesummob.util.ObjectCache;
 import java.io.IOException;
 
 /**
- * The loader for the categories
+ * The loader for the categories that gets the data
+ * from the given API and fills the adapter
  */
 public class CategoriesLoader extends BaseAdapterLoader
         <CategoriesService, CategoriesObjectModel, FoodAdapter> {
